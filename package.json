@@ -16,5 +16,14 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
     "dev": "webpack-dev-server --content-base public"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.0.1",
+    "postcss": "^8.1.4",
+    "postcss-loader": "^4.0.4",
+    "postcss-nested": "^5.0.1",
+    "precss": "^4.0.0",
+    "svelte-preprocess": "^4.5.2",
+    "tailwindcss": "^1.9.6"
   }
 }
