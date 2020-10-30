@@ -1,4 +1,5 @@
 <script>
+	import ImgSizeFigure from './ImgSizeFigure.svelte'
 	export let profiles;
 </script>
 
@@ -18,10 +19,7 @@
 		</header>
 		<main>
 			{#each profile.images as image}
-			<figure style="width: { image.width }px;">
-				<h1>{ image.width },{ image.height }</h1>
-				<figcaption>{ image.title }</figcaption>
-			</figure>
+			<ImgSizeFigure bind:image></ImgSizeFigure>
 			{/each}
 		</main>
 	</article>
@@ -34,9 +32,12 @@
 		/* width: 320px; */
 	}
 
+	nav ul {
+		@apply pt-12 sticky top-0;
+	}
+
 	nav li {
 		@apply font-semibold text-2xl leading-normal;
-		letter-spacing: 1px;
 	}
 
 	nav li a {
@@ -57,23 +58,5 @@
 
 	article main {
 		@apply flex flex-row flex-wrap m-2;
-	}
-
-	figure {
-		@apply m-2 text-center relative flex flex-col items-center justify-center;
-		background: #D8D8D8;
-		border: 1px solid #979797;
-		border-radius: 5px;
-		height: 300px;
-	}
-
-	figure h1 {
-		@apply m-2 text-center text-4xl font-bold;
-		color: #A7A7A7;
-	}
-
-	figure figcaption {
-		@apply absolute bottom-0 left-0 text-sm font-semibold p-1 px-2;
-
 	}
 </style>

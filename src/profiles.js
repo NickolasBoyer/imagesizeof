@@ -4,15 +4,40 @@ export default [
     title: "Twitter",
     images: [
       {
-        title: "Profile Pic",
-        height: 300,
-        width: 300
+        title: "Profile Picture",
+        ratio: [1, 1],
+        width: 400,
+        height: 400,
+        fileSize: { max: '2MB'}
       },
       {
-        title: "Post pic",
-        height: 300,
-        width: 600
-      }
+        title: "Single Image Tweet",
+        ratio: [16, 9],
+        width: 1200,
+        height: 675,
+        fileSize: { max: '5MB'}
+      },
+      {
+        title: "Two Image Tweet",
+        ratio: [7, 8],
+        width: 700,
+        height: 800,
+        fileSize: { max: '5MB'}
+      },
+      {
+        title: "Four Image Tweet",
+        ratio: [7, 8],
+        width: 1200,
+        height: 600,
+        fileSize: { max: '5MB'}
+      },
+      {
+        title: "Header Photo",
+        ratio: [3, 1],
+        width: 1500,
+        height: 500,
+        fileSize: { max: '5MB'}
+      },
     ]
   },
   {
@@ -21,8 +46,9 @@ export default [
     images: [
       {
         title: "Profile Pic",
-        height: 300,
-        width: 300
+        ratio: [1, 1],
+        width: 340,
+        height: 340,
       }
     ]
   }
