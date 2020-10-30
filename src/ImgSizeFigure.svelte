@@ -16,7 +16,7 @@
 		@apply m-2 text-center relative flex flex-col items-center justify-center;
 		background: #D8D8D8;
 		border: 1px solid #979797;
-		border-radius: 5px;
+		border-radius: 10px;
 		height: 250px;
 	}
 
