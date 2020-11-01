@@ -38,8 +38,6 @@ export function renderImgToCanvas(canvas) {
             const outputXBound = Math.min(Math.max(outputX, boundWidth), -1 * boundWidth);
             const outputYBound = Math.min(Math.max(outputY, boundHeight), -1 * boundHeight);
 
-            console.log({outputX, outputY, boundWidth, boundHeight, outputXBound, outputYBound})
-
             // set it to the same size as the image
             canvas.width = outputWidth;
             canvas.height = outputHeight;

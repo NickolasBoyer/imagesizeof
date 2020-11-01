@@ -17,11 +17,9 @@
 	const onMouseMove = (e) => {
 		if (startPosition.x == null || startPosition.y == null) return;
 		offSet = { x: e.clientX - startPosition.x, y: e.clientY - startPosition.y };
-		console.log(offSet)
 	}
 
 	const onMouseDown = (e) => {
-		console.log(e)
 		startPosition = {x: (e.clientX - offSet.x), y: (e.clientY - offSet.y)}
 		figureElement.addEventListener('mousemove', onMouseMove)
 		document.body.addEventListener('mouseup', onMouseUp)
