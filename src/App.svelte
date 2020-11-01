@@ -1,6 +1,29 @@
 <script>
 	import ImgSizeFigure from './ImgSizeFigure.svelte'
 	export let profiles;
+
+	let exampleImgUrl;
+
+	// reader for the example img dropped by the user
+	const reader = new FileReader();
+
+	reader.addEventListener("load", function () {
+    // convert image file to base64 string and pas to component
+    exampleImgUrl = reader.result;
+  }, false);
+
+	const handlerFunction = (e) => {
+		e.preventDefault();
+		e.stopPropagation();
+		// read file on drop
+		reader.readAsDataURL(event.dataTransfer.files[0]);
+	}
+
+	document.body.addEventListener('drop', handlerFunction, false)
+	document.body.addEventListener("dragover", (e) => {
+		// needed for drop to work
+		e.preventDefault();
+});
 </script>
 
 <nav>
@@ -19,7 +42,7 @@
 		</header>
 		<main>
 			{#each profile.images as image}
-			<ImgSizeFigure bind:image></ImgSizeFigure>
+			<ImgSizeFigure bind:image exampleImgUrl="{exampleImgUrl}"></ImgSizeFigure>
 			{/each}
 		</main>
 	</article>
